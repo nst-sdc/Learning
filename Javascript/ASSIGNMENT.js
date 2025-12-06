@@ -19,15 +19,52 @@
 // 1. Write a function that returns the second largest number in an array.
 // Solution:
 
+function secondLargest(arr) {
+    let max = -Infinity
+    let second= -Infinity
+
+    for (let i = 0; i < arr.length; i++) {
+        let num= arr[i]
+
+        if (num > max){
+            second = max 
+            max = num
+        } 
+        else if (num > second && num !== max){
+            second = num
+        }
+    }
+
+    return second
+}
 
 
 // 2. Return all strings with length > 4 from an array.
 // Solution:
+function getLongStrings(arr){
+    let result = [];
 
 
+    for(let i = 0; i < arr.length; i++){
+        if(typeof arr[i] === "string" && arr[i].length > 4){
 
+            result.push(arr[i]);
+        }
+    }
+
+    return result;
+}
 // 3. Convert an array of numbers to their squares using .map().
-// Solution:
+//gitSolution:
+function squareNumbers(arr){
+
+    return arr.map(function(num){
+        return num * num
+
+
+    });
+}
+
 
 
 
@@ -38,6 +75,21 @@
 
 // 5. Count how many times each element appears in an array (return an object).
 // Solution:
+function countElements(arr) {
+    let obj = {};
+
+    for(let i = 0; i < arr.length; i++){
+        let val = arr[i]
+
+        if(obj[val]){
+            obj[val] = obj[val] + 1
+        } else {
+            obj[val] = 1
+        }
+    }
+
+    return obj
+}
 
 
 
@@ -45,6 +97,15 @@
 
 // 6. Write a function that returns all keys of an object in an array.
 // Solution:
+function getKeys(obj){
+    let keysArr = []
+
+    for(let key in obj){
+        keysArr.push(key)
+    }
+
+    return keysArr
+}
 
 
 
@@ -56,6 +117,14 @@
 // 8. Write a function that checks if an object is empty.
 // Solution:
 
+function is_gempty(obj) {
+
+    if (Object.keys(obj).length === 0) {
+        return true
+    }
+    return false
+}
+
 
 
 // 9. Merge two objects without using the spread operator.
@@ -65,6 +134,13 @@
 
 // 10. Create an object with a method that returns "Hello, <name>" using this.
 // Solution:
+
+const person = {
+    name: "Shravani" ,
+    say_hello: function() {
+        return "Hello, " + this.name;
+    }
+}
 
 
 
