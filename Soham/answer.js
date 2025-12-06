@@ -18,20 +18,22 @@
 
 // 1. Write a function that returns the second largest number in an array.
 // Solution:
-function getSecondLargest(numbers) {
-  let largest = -Infinity;
-  let secondLargest = -Infinity;
-  for (const num of numbers) {
-    if (num > largest) {
-      secondLargest = largest;
-      largest = num;
+const sc = (arr)=>{
+    mx = arr[0]
+    for(let i = 0; i < arr.length;i++){
+        if (arr[i] > mx){
+            mx = arr[i]
+        }
+        i1=i
     }
-    else if (num > secondLargest && num !== largest) {
-      secondLargest = num;
+    arr.splice(i1,1)
+    mx2 = arr[0]
+    for(let i = 0;i<arr.length;i++){
+        if (arr[i]>mx2){
+            mx2 = arr[i]
+        }
     }
-  }
-
-  return secondLargest;
+    return mx2
 }
 
 // 2. Return all strings with length > 4 from an array.
